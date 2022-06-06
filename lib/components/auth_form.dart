@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:chat/components/user_image_picker.dart';
 import 'package:chat/models/auth_form_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +21,29 @@ class AuthForm extends StatefulWidget {
 
 class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
+  // final _passwordController = TextEditingController();
   final _formData = AuthFormData();
+
+  void _showError(String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(msg),
+      backgroundColor: Theme.of(context).errorColor,
+    ));
+  }
 
   void _submit() {
     final isValid = _formKey.currentState?.validate() ?? false;
     if (!isValid) return;
 
+    if (_formData.image == null && _formData.isSingUp) {
+      return _showError("Imagem não selecionada");
+    }
+
     widget.onSubmit(_formData);
+  }
+
+  void _handlerImagePick(File image) {
+    _formData.image = image;
   }
 
   @override
@@ -37,6 +56,8 @@ class _AuthFormState extends State<AuthForm> {
           key: _formKey,
           child: Column(
             children: [
+              if (_formData.isSingUp)
+                UserImagePicker(onImagePick: _handlerImagePick),
               if (_formData.isSingUp)
                 TextFormField(
                   key: ValueKey("name"),
@@ -70,6 +91,7 @@ class _AuthFormState extends State<AuthForm> {
                 onChanged: (password) => _formData.password = password,
                 decoration: InputDecoration(labelText: "Senha"),
                 obscureText: true,
+                // controller: _passwordController,
                 validator: (_password) {
                   final password = _password ?? "";
                   if (password.length < 6) {
@@ -82,6 +104,15 @@ class _AuthFormState extends State<AuthForm> {
                 TextFormField(
                   decoration: InputDecoration(labelText: "Confirmar Senha"),
                   obscureText: true,
+                  // validator: _formData.isLogin
+                  //     ? null
+                  //     : (_password) {
+                  //         final password = _password ?? "";
+                  //         if (password != _passwordController) {
+                  //           return "Senhas informadas não conferem";
+                  //         }
+                  //         return null;
+                  //       },
                 ),
               SizedBox(height: 12),
               ElevatedButton(
