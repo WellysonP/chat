@@ -1,3 +1,4 @@
+import 'package:chat/pages/auth_or_home_page.dart';
 import 'package:chat/pages/auth_page.dart';
 import 'package:chat/pages/loadind_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         secondary: Colors.amber,
       )),
       debugShowCheckedModeBanner: false,
-      home: AuthPage(),
+      home: AuthOrHomePage(),
     );
   }
 }
