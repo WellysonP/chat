@@ -5,15 +5,19 @@ enum AuthMode { SignUp, Login }
 class AuthFormData {
   String name = "";
   String email = "";
-  String passord = "";
+  String password = "";
   File? image;
   AuthMode _mode = AuthMode.Login;
 
-  bool get isLoging {
+  bool get isLogin {
     return _mode == AuthMode.Login;
   }
 
   bool get isSingUp {
     return _mode == AuthMode.SignUp;
+  }
+
+  void toggleAuthMode() {
+    _mode = isLogin ? AuthMode.SignUp : AuthMode.Login;
   }
 }
