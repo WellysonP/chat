@@ -4,8 +4,6 @@ import 'package:chat/pages/auth_page.dart';
 import 'package:chat/pages/chat_page.dart';
 import 'package:chat/pages/loadind_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AuthOrHomePage extends StatelessWidget {
   const AuthOrHomePage({Key? key}) : super(key: key);
