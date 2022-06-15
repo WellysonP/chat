@@ -8,30 +8,30 @@ import '../../models/chat_user.dart';
 
 class ChatMockService implements ChatService {
   static final List<ChatMessage> _msgs = [
-    ChatMessage(
-      id: "1",
-      text: "testando primeira mensagem",
-      createdAt: DateTime.now(),
-      userId: "Lsin",
-      userName: "Wellyson",
-      userImageUrl: "assets/images/avatar.png",
-    ),
-    ChatMessage(
-      id: "2",
-      text: "Hello World",
-      createdAt: DateTime.now(),
-      userId: "45",
-      userName: "Melhorzinho",
-      userImageUrl: "assets/images/avatar.png",
-    ),
-    ChatMessage(
-      id: "1",
-      text: "Relou, má parido",
-      createdAt: DateTime.now(),
-      userId: "Lsin",
-      userName: "Wellyson",
-      userImageUrl: "assets/images/avatar.png",
-    ),
+    // ChatMessage(
+    //   id: "1",
+    //   text: "testando primeira mensagem",
+    //   createdAt: DateTime.now(),
+    //   userId: "123",
+    //   userName: "Wellyson",
+    //   userImageUrl: "assets/images/avatar.png",
+    // ),
+    // ChatMessage(
+    //   id: "2",
+    //   text: "Hello World",
+    //   createdAt: DateTime.now(),
+    //   userId: "45",
+    //   userName: "Jean Grey",
+    //   userImageUrl: "assets/images/avatar.png",
+    // ),
+    // ChatMessage(
+    //   id: "1",
+    //   text: "Relou, má parido",
+    //   createdAt: DateTime.now(),
+    //   userId: "123",
+    //   userName: "Wellyson",
+    //   userImageUrl: "assets/images/avatar.png",
+    // ),
   ];
   static MultiStreamController<List<ChatMessage>>? _controller;
 
@@ -54,7 +54,7 @@ class ChatMockService implements ChatService {
       userImageUrl: user.imageUrl,
     );
     _msgs.add(newMessage);
-    _controller?.add(_msgs);
+    _controller?.add(_msgs.reversed.toList());
     return newMessage;
   }
 }
