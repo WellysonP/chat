@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "928743122255",
+    "project_id": "lsin-chat",
+    "storage_bucket": "lsin-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928743122255:android:5ddc974f8d47e50405913a",
+        "android_client_info": {
+          "package_name": "br.com.wellysonpontes.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928743122255-flvtbsv8pujdb9i2pekkpqfmecgc867n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyRyN4OPTWC4FA4VlVuEqyMsx-rjA_QBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928743122255-flvtbsv8pujdb9i2pekkpqfmecgc867n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928743122255-f6dj9o5n65euhmndje2o0ch075d49io0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.wellysonpontes.chat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
