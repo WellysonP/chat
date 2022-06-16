@@ -14,8 +14,8 @@ class AuthOrHomePage extends StatelessWidget {
 
   Future<void> init(BuildContext context) async {
     await Firebase.initializeApp(
-        // options: DefaultFirebaseOptions.currentPlatform,
-        );
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 
   @override
